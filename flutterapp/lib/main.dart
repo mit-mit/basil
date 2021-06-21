@@ -19,7 +19,6 @@ class MyApp extends StatelessWidget {
         primaryColor: basilGreen,
         accentColor: basilOrange,
         // Fonts.
-        //fontFamily: 'Monterrat',
         textTheme: TextTheme(
           headline1: TextStyle(
             fontSize: 96,

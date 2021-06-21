@@ -23,6 +23,23 @@ class RecipeWidget extends StatelessWidget {
           ),
         ],
       ),
+      bottomSheet: RecipeSheet(expanded: false),
+    );
+  }
+}
+
+class RecipeNameWidget extends StatelessWidget {
+  const RecipeNameWidget({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      'Creamy Pesto Pasta',
+      style:
+          Theme.of(context).textTheme.headline2!.copyWith(color: basilOrange),
+      textAlign: TextAlign.center,
     );
   }
 }
@@ -39,6 +56,7 @@ class RecipeDescriptionWidget extends StatelessWidget {
       alignment: Alignment.center,
       child: Column(
         children: [
+          // Desscription.
           ColoredBox(
             color: basilLightGreen,
             child: Column(
@@ -60,6 +78,8 @@ class RecipeDescriptionWidget extends StatelessWidget {
             ),
           ),
           SizedBox(height: 16),
+
+          // Nutrients,
           SizedBox(
             height: 64,
             child: Row(
@@ -100,6 +120,8 @@ class RecipeDescriptionWidget extends StatelessWidget {
               color: basilGreen,
             ),
           ),
+
+          // Allergens.
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -111,25 +133,161 @@ class RecipeDescriptionWidget extends StatelessWidget {
               SizedBox(width: 16),
               Text('Egg Free', style: Theme.of(context).textTheme.subtitle1)
             ],
-          )
+          ),
         ],
       ),
     );
   }
 }
 
-class RecipeNameWidget extends StatelessWidget {
-  const RecipeNameWidget({
+class RecipeSheet extends StatefulWidget {
+  final bool expanded;
+  const RecipeSheet({
     Key? key,
+    this.expanded = true,
   }) : super(key: key);
 
   @override
+  _RecipeSheetState createState() => _RecipeSheetState();
+}
+
+class _RecipeSheetState extends State<RecipeSheet> {
+  late bool expanded;
+
+  @override
+  void initState() {
+    expanded = widget.expanded;
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Text(
-      'Creamy Pesto Pasta',
-      style:
-          Theme.of(context).textTheme.headline2!.copyWith(color: basilOrange),
-      textAlign: TextAlign.center,
+    final tabs = [
+      for (var label in ['INGREDIENTS ', 'STEPS'])
+        Tab(
+          icon: Text(label, style: Theme.of(context).textTheme.subtitle1),
+        ),
+    ];
+
+    return DefaultTabController(
+      length: 2,
+      child: expanded
+          ? Dismissible(
+              key: Key("RecipeSheet"),
+              direction: DismissDirection.down,
+              background: Container(color: basilBackground),
+              onDismissed: (_) {
+                setState(() {
+                  expanded = false;
+                });
+              },
+              child: Scaffold(
+                appBar: AppBar(
+                  elevation: 0,
+                  backgroundColor: basilBackground,
+                  flexibleSpace: TabBar(
+                    tabs: tabs,
+                    indicatorColor: basilGreen,
+                  ),
+                ),
+                body: TabBarView(
+                  children: [RecipeIngredients(), RecipeSteps()],
+                ),
+              ),
+            )
+          : Container(
+              decoration: BoxDecoration(
+                color: basilBackground,
+                border:
+                    Border(top: BorderSide(color: basilLightGreen, width: 2)),
+              ),
+              child: TabBar(
+                tabs: tabs,
+                indicatorColor: Colors.transparent,
+                onTap: (_) {
+                  setState(() {
+                    expanded = true;
+                  });
+                },
+              ),
+            ),
+    );
+  }
+}
+
+class Ingredient {
+  String name;
+  String amount;
+  Ingredient(this.name, this.amount);
+}
+
+class RecipeIngredients extends StatelessWidget {
+  const RecipeIngredients({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final ingredients = [
+      Ingredient('Basil', '6 tbsp'),
+      Ingredient('Gluten-free spaghetti', '2 cups'),
+      Ingredient('Garlic', '1 tbsp'),
+      Ingredient('Ricotta', '4 cups'),
+      Ingredient('Kale', '3 cups'),
+      Ingredient('Red Pepper Flakes', '1 tbsp'),
+      Ingredient('Extra Virgin Olive Oil', '1 tbsp'),
+      Ingredient('Salt', '1 tbsp'),
+      Ingredient('Pine Nuts', '2 tbsp'),
+    ];
+
+    return Container(
+      color: Colors.transparent,
+      child: Column(children: [
+        for (var ingredient in ingredients)
+          Padding(
+            padding: const EdgeInsets.fromLTRB(8, 16, 8, 16),
+            child: Row(
+              children: [
+                SizedBox(width: 16),
+                Icon(
+                  Icons.add_circle_outline,
+                  color: basilGreen,
+                ),
+                SizedBox(width: 16),
+                Expanded(child: Text(ingredient.name)),
+                SizedBox(width: 16),
+                Text(ingredient.amount),
+                SizedBox(width: 16),
+              ],
+            ),
+          )
+      ]),
+    );
+  }
+}
+
+class RecipeSteps extends StatelessWidget {
+  const RecipeSteps({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(16, 16, 64, 0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: <Widget>[
+          Text(
+            'Chop the Pesto',
+            style: Theme.of(context).textTheme.headline6,
+          ),
+          Text(
+            'Place the basil leaves, garlic and pine nuts on a sturdy cutting board.',
+            style: Theme.of(context)
+                .textTheme
+                .headline6!
+                .copyWith(fontWeight: FontWeight.normal),
+          ),
+        ],
+      ),
     );
   }
 }
