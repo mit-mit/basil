@@ -6,24 +6,53 @@ const basilLightGreen = const Color(0xfff1f5df);
 const basilOlive = const Color(0xff37966f);
 const basilOrange = const Color(0xfffd5523);
 
-class RecipeWidget extends StatelessWidget {
+class RecipeWidget extends StatefulWidget {
   const RecipeWidget({Key? key}) : super(key: key);
 
   @override
+  _RecipeWidgetState createState() => _RecipeWidgetState();
+}
+
+class _RecipeWidgetState extends State<RecipeWidget> {
+  var showBottomTabs = true;
+
+  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: ListView(
-        children: [
-          SizedBox(height: 32),
-          Stack(
-            children: [
-              RecipeDescriptionWidget(),
-              RecipeNameWidget(),
-            ],
-          ),
-        ],
+    return DefaultTabController(
+      length: 2,
+      child: Scaffold(
+        body: ListView(
+          children: [
+            SizedBox(height: 32),
+            Stack(
+              children: [
+                RecipeDescriptionWidget(),
+                RecipeNameWidget(),
+              ],
+            ),
+          ],
+        ),
+        bottomSheet: showBottomTabs
+            ? RecipeSheet(
+                collapsed: true,
+                onTap: () {
+                  setState(() {
+                    showBottomTabs = false;
+                  });
+                  showModalBottomSheet(
+                    context: context,
+                    isScrollControlled: true,
+                    builder: ((BuildContext context) {
+                      return RecipeSheet(collapsed: false);
+                    }),
+                  );
+                  setState(() {
+                    showBottomTabs = true;
+                  });
+                },
+              )
+            : null,
       ),
-      bottomSheet: RecipeSheet(expanded: false),
     );
   }
 }
@@ -140,25 +169,11 @@ class RecipeDescriptionWidget extends StatelessWidget {
   }
 }
 
-class RecipeSheet extends StatefulWidget {
-  final bool expanded;
-  const RecipeSheet({
-    Key? key,
-    this.expanded = true,
-  }) : super(key: key);
+class RecipeSheet extends StatelessWidget {
+  final bool collapsed;
+  final VoidCallback? onTap;
 
-  @override
-  _RecipeSheetState createState() => _RecipeSheetState();
-}
-
-class _RecipeSheetState extends State<RecipeSheet> {
-  late bool expanded;
-
-  @override
-  void initState() {
-    expanded = widget.expanded;
-    super.initState();
-  }
+  RecipeSheet({required this.collapsed, this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -171,31 +186,8 @@ class _RecipeSheetState extends State<RecipeSheet> {
 
     return DefaultTabController(
       length: 2,
-      child: expanded
-          ? Dismissible(
-              key: Key("RecipeSheet"),
-              direction: DismissDirection.down,
-              background: Container(color: basilBackground),
-              onDismissed: (_) {
-                setState(() {
-                  expanded = false;
-                });
-              },
-              child: Scaffold(
-                appBar: AppBar(
-                  elevation: 0,
-                  backgroundColor: basilBackground,
-                  flexibleSpace: TabBar(
-                    tabs: tabs,
-                    indicatorColor: basilGreen,
-                  ),
-                ),
-                body: TabBarView(
-                  children: [RecipeIngredients(), RecipeSteps()],
-                ),
-              ),
-            )
-          : Container(
+      child: collapsed
+          ? Container(
               decoration: BoxDecoration(
                 color: basilBackground,
                 border:
@@ -205,10 +197,24 @@ class _RecipeSheetState extends State<RecipeSheet> {
                 tabs: tabs,
                 indicatorColor: Colors.transparent,
                 onTap: (_) {
-                  setState(() {
-                    expanded = true;
-                  });
+                  onTap?.call();
                 },
+              ),
+            )
+          : Container(
+              color: basilBackground.withOpacity(0.5),
+              child: Column(
+                children: [
+                  TabBar(
+                    tabs: tabs,
+                    indicatorColor: basilGreen,
+                  ),
+                  Expanded(
+                    child: TabBarView(
+                      children: [RecipeIngredients(), RecipeSteps()],
+                    ),
+                  )
+                ],
               ),
             ),
     );
