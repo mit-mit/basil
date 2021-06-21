@@ -98,6 +98,9 @@ class MyApp extends StatelessWidget {
             color: basilGreen,
           ),
         ),
+        bottomSheetTheme: BottomSheetThemeData(
+          backgroundColor: basilBackground.withOpacity(0.8),
+        ),
       ),
       home: RecipeWidget(),
     );
