@@ -36,29 +36,16 @@ fun RecipeDetails() {
 }
 
 @Composable
-fun RecipeAllergens() {
-    Row(
-        horizontalArrangement = Arrangement.Center,
-        verticalAlignment = Alignment.CenterVertically,
-        modifier = Modifier.fillMaxWidth()
+fun RecipeDescription() {
+    Column(
+        Modifier.background(basilLightGreen)
     ) {
-        Icon(
-            painter = painterResource(id = R.drawable.no_gluten),
-            contentDescription = "No gluten icon"
-        )
-        Spacer(Modifier.width(16.dp))
+        Spacer(Modifier.height(96.dp))
+        Divider(thickness = 1.dp, color = basilGreen)
         Text(
-            text = "Gluten-free",
-            style = MaterialTheme.typography.subtitle1
-        )
-        Spacer(Modifier.width(32.dp))
-        Icon(
-            painter = painterResource(id = R.drawable.no_egg),
-            contentDescription = "No egg icon"
-        )
-        Spacer(Modifier.width(16.dp))
-        Text(
-            text = "Egg Free", style = MaterialTheme.typography.subtitle1
+            text = "Guilt-free gluten-free spaghetti pasta is sauted in garlic, and pesto. It's a easy and healthy dinner.\n",
+            style = MaterialTheme.typography.h6.copy(fontWeight = FontWeight.Normal),
+            textAlign = TextAlign.Center
         )
     }
 }
@@ -135,19 +122,29 @@ fun RecipeNutrients() {
 }
 
 @Composable
-fun RecipeDescription() {
-    Column(
-        Modifier.background(basilLightGreen)
+fun RecipeAllergens() {
+    Row(
+        horizontalArrangement = Arrangement.Center,
+        verticalAlignment = Alignment.CenterVertically,
+        modifier = Modifier.fillMaxWidth()
     ) {
-        Spacer(Modifier.height(96.dp))
-        Divider(thickness = 1.dp, color = basilGreen)
+        Icon(
+            painter = painterResource(id = R.drawable.no_gluten),
+            contentDescription = "No gluten icon"
+        )
+        Spacer(Modifier.width(16.dp))
         Text(
-            text = "Guilt-free gluten-free spaghetti pasta is sauted in garlic, and pesto. It's a easy and healthy dinner.\n",
-            style = MaterialTheme.typography.h6.copy(fontWeight = FontWeight.Normal),
-            textAlign = TextAlign.Center
+            text = "Gluten-free",
+            style = MaterialTheme.typography.subtitle1
+        )
+        Spacer(Modifier.width(32.dp))
+        Icon(
+            painter = painterResource(id = R.drawable.no_egg),
+            contentDescription = "No egg icon"
+        )
+        Spacer(Modifier.width(16.dp))
+        Text(
+            text = "Egg Free", style = MaterialTheme.typography.subtitle1
         )
     }
 }
-
-
-
