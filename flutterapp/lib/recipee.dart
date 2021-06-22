@@ -202,18 +202,23 @@ class RecipeSheet extends StatelessWidget {
             )
           : Container(
               color: basilBackground.withOpacity(0.5),
-              child: Column(
-                children: [
-                  TabBar(
-                    tabs: tabs,
-                    indicatorColor: basilGreen,
-                  ),
-                  Expanded(
-                    child: TabBarView(
-                      children: [RecipeIngredients(), RecipeSteps()],
+              // Tried SafeArea here, but that doesn't seem to work!?
+              child: Padding(
+                padding:
+                    EdgeInsets.fromLTRB(0, AppBar().preferredSize.height, 0, 0),
+                child: Column(
+                  children: [
+                    TabBar(
+                      tabs: tabs,
+                      indicatorColor: basilGreen,
                     ),
-                  )
-                ],
+                    Expanded(
+                      child: TabBarView(
+                        children: [RecipeIngredients(), RecipeSteps()],
+                      ),
+                    )
+                  ],
+                ),
               ),
             ),
     );
