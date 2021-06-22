@@ -80,6 +80,7 @@ class RecipeDescriptionWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
     return Container(
       padding: EdgeInsets.fromLTRB(32, 64, 32, 0),
       alignment: Alignment.center,
@@ -99,7 +100,7 @@ class RecipeDescriptionWidget extends StatelessWidget {
                   padding: EdgeInsets.all(16),
                   child: Text(
                     'Guilt-free gluten-free spaghetti pasta is sauted in garlic, and pesto. It\'s a easy and healthy dinner.',
-                    style: Theme.of(context).textTheme.headline6,
+                    style: textTheme.headline6,
                     textAlign: TextAlign.center,
                   ),
                 ),
@@ -117,26 +118,24 @@ class RecipeDescriptionWidget extends StatelessWidget {
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text('Calories',
-                        style: Theme.of(context).textTheme.subtitle2),
-                    Text('465g', style: Theme.of(context).textTheme.subtitle1),
+                    Text('Calories', style: textTheme.subtitle2),
+                    Text('465g', style: textTheme.subtitle1),
                   ],
                 ),
                 VerticalDivider(width: 64, thickness: .25, color: basilGreen),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text('Protein',
-                        style: Theme.of(context).textTheme.subtitle2),
-                    Text('27g', style: Theme.of(context).textTheme.subtitle1),
+                    Text('Protein', style: textTheme.subtitle2),
+                    Text('27g', style: textTheme.subtitle1),
                   ],
                 ),
                 VerticalDivider(width: 64, thickness: .25, color: basilGreen),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text('Fat', style: Theme.of(context).textTheme.subtitle2),
-                    Text('12g', style: Theme.of(context).textTheme.subtitle1),
+                    Text('Fat', style: textTheme.subtitle2),
+                    Text('12g', style: textTheme.subtitle1),
                   ],
                 ),
               ],
@@ -156,11 +155,11 @@ class RecipeDescriptionWidget extends StatelessWidget {
             children: [
               Image(image: AssetImage('assets/icons/no-gluten.png')),
               SizedBox(width: 16),
-              Text('Gluten-free', style: Theme.of(context).textTheme.subtitle1),
+              Text('Gluten-free', style: textTheme.subtitle1),
               SizedBox(width: 32),
               Image(image: AssetImage('assets/icons/no-egg.png')),
               SizedBox(width: 16),
-              Text('Egg Free', style: Theme.of(context).textTheme.subtitle1)
+              Text('Egg Free', style: textTheme.subtitle1)
             ],
           ),
         ],
@@ -275,6 +274,7 @@ class RecipeSteps extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
     return Padding(
       padding: const EdgeInsets.fromLTRB(16, 16, 64, 0),
       child: Column(
@@ -283,14 +283,11 @@ class RecipeSteps extends StatelessWidget {
         children: <Widget>[
           Text(
             'Chop the Pesto',
-            style: Theme.of(context).textTheme.headline6,
+            style: textTheme.headline6,
           ),
           Text(
             'Place the basil leaves, garlic and pine nuts on a sturdy cutting board.',
-            style: Theme.of(context)
-                .textTheme
-                .headline6!
-                .copyWith(fontWeight: FontWeight.normal),
+            style: textTheme.headline6!.copyWith(fontWeight: FontWeight.normal),
           ),
         ],
       ),
