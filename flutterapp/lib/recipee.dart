@@ -21,7 +21,7 @@ class _RecipeWidgetState extends State<RecipeWidget> {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
-        body: ListView(
+        body: Column(
           children: [
             SizedBox(height: 32),
             Stack(
@@ -83,10 +83,9 @@ class RecipeDescriptionWidget extends StatelessWidget {
     final textTheme = Theme.of(context).textTheme;
     return Container(
       padding: EdgeInsets.fromLTRB(32, 64, 32, 0),
-      alignment: Alignment.center,
       child: Column(
         children: [
-          // Desscription.
+          // Description.
           ColoredBox(
             color: basilLightGreen,
             child: Column(
