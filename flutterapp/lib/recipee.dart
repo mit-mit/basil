@@ -98,7 +98,7 @@ class RecipeDescriptionWidget extends StatelessWidget {
                 Container(
                   padding: EdgeInsets.all(16),
                   child: Text(
-                    'Guilt-free gluten-free spaghetti pasta is sauted in garlic, and pesto. It\'s a easy and healhy dinner.',
+                    'Guilt-free gluten-free spaghetti pasta is sauted in garlic, and pesto. It\'s a easy and healthy dinner.',
                     style: Theme.of(context).textTheme.headline6,
                     textAlign: TextAlign.center,
                   ),
