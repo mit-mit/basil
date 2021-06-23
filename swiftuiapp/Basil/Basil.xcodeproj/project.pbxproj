@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		412E8628268319F300E30E2A /* BasilApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412E8627268319F300E30E2A /* BasilApp.swift */; };
-		412E862A268319F300E30E2A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412E8629268319F300E30E2A /* ContentView.swift */; };
 		412E862C268319F500E30E2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 412E862B268319F500E30E2A /* Assets.xcassets */; };
 		412E862F268319F500E30E2A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 412E862E268319F500E30E2A /* Preview Assets.xcassets */; };
 		412E863A268319F600E30E2A /* BasilTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412E8639268319F600E30E2A /* BasilTests.swift */; };
 		412E8645268319F600E30E2A /* BasilUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412E8644268319F600E30E2A /* BasilUITests.swift */; };
+		412E86532683243500E30E2A /* RecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412E86522683243500E30E2A /* RecipeView.swift */; };
+		412E8655268324B100E30E2A /* RecipeNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412E8654268324B100E30E2A /* RecipeNameView.swift */; };
+		412E86572683252500E30E2A /* RecipeDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412E86562683252500E30E2A /* RecipeDetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +37,6 @@
 /* Begin PBXFileReference section */
 		412E8624268319F200E30E2A /* Basil.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Basil.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		412E8627268319F300E30E2A /* BasilApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasilApp.swift; sourceTree = "<group>"; };
-		412E8629268319F300E30E2A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		412E862B268319F500E30E2A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		412E862E268319F500E30E2A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		412E8630268319F500E30E2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -45,6 +46,9 @@
 		412E8640268319F600E30E2A /* BasilUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BasilUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		412E8644268319F600E30E2A /* BasilUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasilUITests.swift; sourceTree = "<group>"; };
 		412E8646268319F600E30E2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		412E86522683243500E30E2A /* RecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeView.swift; sourceTree = "<group>"; };
+		412E8654268324B100E30E2A /* RecipeNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeNameView.swift; sourceTree = "<group>"; };
+		412E86562683252500E30E2A /* RecipeDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,10 +100,12 @@
 			isa = PBXGroup;
 			children = (
 				412E8627268319F300E30E2A /* BasilApp.swift */,
-				412E8629268319F300E30E2A /* ContentView.swift */,
 				412E862B268319F500E30E2A /* Assets.xcassets */,
 				412E8630268319F500E30E2A /* Info.plist */,
 				412E862D268319F500E30E2A /* Preview Content */,
+				412E86522683243500E30E2A /* RecipeView.swift */,
+				412E8654268324B100E30E2A /* RecipeNameView.swift */,
+				412E86562683252500E30E2A /* RecipeDetailsView.swift */,
 			);
 			path = Basil;
 			sourceTree = "<group>";
@@ -259,8 +265,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				412E862A268319F300E30E2A /* ContentView.swift in Sources */,
+				412E86532683243500E30E2A /* RecipeView.swift in Sources */,
+				412E86572683252500E30E2A /* RecipeDetailsView.swift in Sources */,
 				412E8628268319F300E30E2A /* BasilApp.swift in Sources */,
+				412E8655268324B100E30E2A /* RecipeNameView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,6 +427,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Basil/Preview Content\"";
+				DEVELOPMENT_TEAM = GAD6HE5MEM;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Basil/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -440,6 +449,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Basil/Preview Content\"";
+				DEVELOPMENT_TEAM = GAD6HE5MEM;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Basil/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
