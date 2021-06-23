@@ -10,7 +10,6 @@ import SwiftUI
 struct RecipeDetailsView: View {
     var body: some View {
         VStack {
-            
             // Description.
             RecipeDescriptionView()
             Spacer()
