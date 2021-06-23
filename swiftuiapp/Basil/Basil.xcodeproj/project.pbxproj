@@ -16,6 +16,11 @@
 		412E8655268324B100E30E2A /* RecipeNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412E8654268324B100E30E2A /* RecipeNameView.swift */; };
 		412E86572683252500E30E2A /* RecipeDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412E86562683252500E30E2A /* RecipeDetailsView.swift */; };
 		412E865926832E3100E30E2A /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412E865826832E3100E30E2A /* Theme.swift */; };
+		412E867026833B3200E30E2A /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 412E866B26833B3100E30E2A /* Montserrat-SemiBold.ttf */; };
+		412E867126833B3200E30E2A /* Lekton-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 412E866C26833B3200E30E2A /* Lekton-Regular.ttf */; };
+		412E867226833B3200E30E2A /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 412E866D26833B3200E30E2A /* Montserrat-Regular.ttf */; };
+		412E867326833B3200E30E2A /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 412E866E26833B3200E30E2A /* Montserrat-Bold.ttf */; };
+		412E867426833B3200E30E2A /* Lekton-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 412E866F26833B3200E30E2A /* Lekton-Bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +56,11 @@
 		412E8654268324B100E30E2A /* RecipeNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeNameView.swift; sourceTree = "<group>"; };
 		412E86562683252500E30E2A /* RecipeDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsView.swift; sourceTree = "<group>"; };
 		412E865826832E3100E30E2A /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		412E866B26833B3100E30E2A /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
+		412E866C26833B3200E30E2A /* Lekton-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lekton-Regular.ttf"; sourceTree = "<group>"; };
+		412E866D26833B3200E30E2A /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		412E866E26833B3200E30E2A /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		412E866F26833B3200E30E2A /* Lekton-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lekton-Bold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +119,7 @@
 				412E8654268324B100E30E2A /* RecipeNameView.swift */,
 				412E86562683252500E30E2A /* RecipeDetailsView.swift */,
 				412E865826832E3100E30E2A /* Theme.swift */,
+				412E866026833AC800E30E2A /* Fonts */,
 			);
 			path = Basil;
 			sourceTree = "<group>";
@@ -137,6 +148,18 @@
 				412E8646268319F600E30E2A /* Info.plist */,
 			);
 			path = BasilUITests;
+			sourceTree = "<group>";
+		};
+		412E866026833AC800E30E2A /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				412E866F26833B3200E30E2A /* Lekton-Bold.ttf */,
+				412E866C26833B3200E30E2A /* Lekton-Regular.ttf */,
+				412E866E26833B3200E30E2A /* Montserrat-Bold.ttf */,
+				412E866D26833B3200E30E2A /* Montserrat-Regular.ttf */,
+				412E866B26833B3100E30E2A /* Montserrat-SemiBold.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,8 +265,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				412E867426833B3200E30E2A /* Lekton-Bold.ttf in Resources */,
 				412E862F268319F500E30E2A /* Preview Assets.xcassets in Resources */,
+				412E867126833B3200E30E2A /* Lekton-Regular.ttf in Resources */,
 				412E862C268319F500E30E2A /* Assets.xcassets in Resources */,
+				412E867026833B3200E30E2A /* Montserrat-SemiBold.ttf in Resources */,
+				412E867226833B3200E30E2A /* Montserrat-Regular.ttf in Resources */,
+				412E867326833B3200E30E2A /* Montserrat-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

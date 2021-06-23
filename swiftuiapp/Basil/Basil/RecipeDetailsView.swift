@@ -43,6 +43,7 @@ struct RecipeDescriptionView: View {
                 .background(Color.basilGreen)
             Text("Guilt-free gluten-free spaghetti pasta is sauted in garlic, and pesto. It\"s a easy and healthy dinner.")
                 .padding(16)
+                .basilStyle(.headline6)
         }
         .background(Color.basilLightGreen)
     }
@@ -54,17 +55,24 @@ struct RecipeNutrientsView: View {
         HStack {
             VStack {
                 Text("Calories")
+                    .basilStyle(.subtitle2)
                 Text("465g")
+                    .basilStyle(.subtitle1)
+
             }
             Divider()
             VStack {
                 Text("Protein")
+                    .basilStyle(.subtitle2)
                 Text("27g")
+                    .basilStyle(.subtitle1)
             }
             Divider()
             VStack {
                 Text("Fat")
+                    .basilStyle(.subtitle2)
                 Text("125g")
+                    .basilStyle(.subtitle1)
             }
             
         }
@@ -77,8 +85,10 @@ struct RecipeAllergensView: View {
         HStack {
             Image("no-gluten")
             Text("Gluten-free")
+                .basilStyle(.subtitle1)
             Image("no-egg")
             Text("Egg-free")
+                .basilStyle(.subtitle1)
         }
     }
 }
