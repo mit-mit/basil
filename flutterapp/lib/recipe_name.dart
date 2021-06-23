@@ -12,7 +12,7 @@ class RecipeNameWidget extends StatelessWidget {
     return Text(
       'Creamy Pesto Pasta',
       style:
-          Theme.of(context).textTheme.headline2!.copyWith(color: basilOrange),
+          Theme.of(context).textTheme.headline3!.copyWith(color: basilOrange),
       textAlign: TextAlign.center,
     );
   }

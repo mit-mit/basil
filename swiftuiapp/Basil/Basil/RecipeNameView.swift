@@ -1,10 +1,3 @@
-//
-//  RecipeNameView.swift
-//  Basil
-//
-//  Created by Michael Thomsen on 23/06/2021.
-//
-
 import SwiftUI
 
 struct RecipeNameView: View {

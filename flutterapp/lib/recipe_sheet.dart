@@ -13,7 +13,7 @@ class RecipeSheet extends StatelessWidget {
     final tabs = [
       for (var label in ['INGREDIENTS ', 'STEPS'])
         Tab(
-          icon: Text(label, style: Theme.of(context).textTheme.subtitle1),
+          icon: Text(label, style: Theme.of(context).textTheme.overline),
         ),
     ];
 
@@ -70,6 +70,8 @@ class RecipeIngredients extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
+
     final ingredients = [
       Ingredient('Basil', '6 tbsp'),
       Ingredient('Gluten-free spaghetti', '2 cups'),
@@ -96,9 +98,10 @@ class RecipeIngredients extends StatelessWidget {
                   color: basilGreen,
                 ),
                 SizedBox(width: 16),
-                Expanded(child: Text(ingredient.name)),
+                Expanded(
+                    child: Text(ingredient.name, style: textTheme.subtitle1)),
                 SizedBox(width: 16),
-                Text(ingredient.amount),
+                Text(ingredient.amount, style: textTheme.subtitle1),
                 SizedBox(width: 16),
               ],
             ),

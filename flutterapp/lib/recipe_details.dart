@@ -15,7 +15,7 @@ class RecipeDetailsWidget extends StatelessWidget {
         children: [
           // Description.
           RecipeDescriptionWidget(),
-          SizedBox(height: 16),
+          SizedBox(height: 8),
 
           // Nutrients,
           RecipeNutrientsWidget(),
@@ -46,16 +46,16 @@ class RecipeDescriptionWidget extends StatelessWidget {
       color: basilLightGreen,
       child: Column(
         children: [
-          SizedBox(height: 96),
+          SizedBox(height: 60),
           Divider(
             thickness: 1,
-            color: basilGreen,
+            color: basilOlive,
           ),
           Container(
-            padding: EdgeInsets.all(16),
+            padding: EdgeInsets.fromLTRB(32, 16, 32, 16),
             child: Text(
               'Guilt-free gluten-free spaghetti pasta is sauted in garlic, and pesto. It\'s a easy and healthy dinner.',
-              style: textTheme.headline6,
+              style: textTheme.subtitle1!.copyWith(height: 1.5, fontSize: 20),
               textAlign: TextAlign.center,
             ),
           ),

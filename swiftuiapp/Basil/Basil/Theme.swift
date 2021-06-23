@@ -1,4 +1,3 @@
-
 import SwiftUI
 
 extension Color {
@@ -43,6 +42,7 @@ enum CustomViewStyle {
     case headline6
     case subtitle1
     case subtitle2
+    case overline1
 }
 
 extension View {
@@ -54,11 +54,11 @@ extension View {
                 .foregroundColor(Color.basilGreen)
         case .headline2:
             self
-                .font(Font.custom("Montserrat-SemiBold", size: 60))
+                .font(Font.custom("Montserrat-SemiBold", size: 64))
                 .foregroundColor(Color.basilGreen)
         case .headline3:
             self
-                .font(Font.custom("Montserrat-Bold", size: 48))
+                .font(Font.custom("Montserrat-Bold", size: 42))
                 .foregroundColor(Color.basilGreen)
         case .headline4:
             self
@@ -70,7 +70,8 @@ extension View {
                 .foregroundColor(Color.basilGreen)
         case .headline6:
             self
-                .font(Font.custom("Lekton-Bold", size: 24))
+                .font(Font.custom("Lekton", size: 24))
+                .lineSpacing(24/2*1.5)
                 .foregroundColor(Color.basilGreen)
         case .subtitle1:
             self
@@ -79,6 +80,10 @@ extension View {
         case .subtitle2:
             self
                 .font(Font.custom("Lekton", size: 15))
+                .foregroundColor(.basilGreen)
+        case .overline1:
+            self
+                .font(Font.custom("Montserrat-Bold", size: 12))
                 .foregroundColor(.basilGreen)
         }
     }

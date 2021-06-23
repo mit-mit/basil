@@ -9,7 +9,7 @@ import androidx.compose.ui.text.style.TextAlign
 fun RecipeName() {
     Text(
         text = "Creamy Pesto Pasta",
-        style = MaterialTheme.typography.h2.copy(color = basilOrange),
+        style = MaterialTheme.typography.h3.copy(color = basilOrange),
         textAlign = TextAlign.Center
     )
 }

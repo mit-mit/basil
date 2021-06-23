@@ -10,9 +10,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 
 @Composable
 fun RecipeDetails() {
@@ -24,7 +24,7 @@ fun RecipeDetails() {
     {
         // Description.
         RecipeDescription()
-        Spacer(Modifier.height(32.dp))
+        Spacer(Modifier.height(8.dp))
 
         // Nutrients.
         RecipeNutrients()
@@ -40,12 +40,17 @@ fun RecipeDescription() {
     Column(
         Modifier.background(basilLightGreen)
     ) {
-        Spacer(Modifier.height(96.dp))
-        Divider(thickness = 1.dp, color = basilGreen)
+        Spacer(Modifier.height(60.dp))
+        Divider(thickness = 1.dp, color = basilOlive)
         Text(
-            text = "Guilt-free gluten-free spaghetti pasta is sauted in garlic, and pesto. It's a easy and healthy dinner.\n",
-            style = MaterialTheme.typography.h6.copy(fontWeight = FontWeight.Normal),
-            textAlign = TextAlign.Center
+            text = "Guilt-free gluten-free spaghetti pasta is sauted in garlic, and pesto. It's a easy and healthy dinner.",
+            style = MaterialTheme.typography.subtitle1.copy(
+                fontSize = 20.sp,
+                lineHeight = (1.5 * 20).sp
+            ),
+            textAlign = TextAlign.Center,
+            modifier = Modifier
+                .padding(start = 32.dp, top = 16.dp, end = 32.dp, bottom = 16.dp)
         )
     }
 }
