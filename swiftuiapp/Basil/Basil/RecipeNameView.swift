@@ -11,7 +11,8 @@ struct RecipeNameView: View {
     var body: some View {
         VStack {
             Text("Creamy Pesto Pasta")
-                .font(.title).foregroundColor(Color.basilOrange).multilineTextAlignment(.center)
+                .font(.title)
+                .foregroundColor(Color.basilOrange).multilineTextAlignment(.center)
             Spacer()
         }
     }

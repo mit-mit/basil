@@ -13,27 +13,36 @@ struct RecipeDetailsView: View {
             
             // Description.
             RecipeDescriptionView()
-            Spacer().frame(height: 16)
+            Spacer()
+                .frame(height: 16)
             
             // Nutrients.
             RecipeNutrientsView()
-            Divider().padding(8.0).frame(height: 1).background(Color.basilGreen)
+            Divider()
+                .padding(8.0)
+                .frame(height: 1)
+                .background(Color.basilGreen)
             
             // Allergens.
             RecipeAllergensView()
             
             // Take up the rest of the vertical space.
             Spacer()
-        }.padding(EdgeInsets(top: 64, leading: 32, bottom: 0, trailing: 32))
+        }
+        .padding(EdgeInsets(top: 64, leading: 32, bottom: 0, trailing: 32))
     }
 }
 
 struct RecipeDescriptionView: View {
     var body: some View {
         VStack {
-            Spacer().frame(height: 96)
-            Divider().frame(height: 1).background(Color.basilGreen)
-            Text("Guilt-free gluten-free spaghetti pasta is sauted in garlic, and pesto. It\"s a easy and healthy dinner.").padding(16)
+            Spacer()
+                .frame(height: 96)
+            Divider()
+                .frame(height: 1)
+                .background(Color.basilGreen)
+            Text("Guilt-free gluten-free spaghetti pasta is sauted in garlic, and pesto. It\"s a easy and healthy dinner.")
+                .padding(16)
         }
         .background(Color.basilLightGreen)
     }
@@ -58,7 +67,8 @@ struct RecipeNutrientsView: View {
                 Text("125g")
             }
             
-        }.frame(height: 64, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+        }
+        .frame(height: 64, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
     }
 }
 
