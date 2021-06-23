@@ -10,7 +10,7 @@ struct RecipeView: View {
                 RecipeNameView()
             }
             Spacer()
-        }
+        }.background(Color.basilBackground)
         // TODO: Add BottomSheet.
     }
 }

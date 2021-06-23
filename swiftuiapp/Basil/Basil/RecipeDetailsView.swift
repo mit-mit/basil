@@ -10,13 +10,14 @@ import SwiftUI
 struct RecipeDetailsView: View {
     var body: some View {
         VStack {
+            
             // Description.
             RecipeDescriptionView()
             Spacer().frame(height: 16)
             
             // Nutrients.
             RecipeNutrientsView()
-            Divider().padding(8.0).frame(height: 1).background(Color/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+            Divider().padding(8.0).frame(height: 1).background(Color.basilGreen)
             
             // Allergens.
             RecipeAllergensView()
@@ -29,7 +30,12 @@ struct RecipeDetailsView: View {
 
 struct RecipeDescriptionView: View {
     var body: some View {
-        Text("Guilt-free gluten-free spaghetti pasta is sauted in garlic, and pesto. It\"s a easy and healthy dinner.")
+        VStack {
+            Spacer().frame(height: 96)
+            Divider().frame(height: 1).background(Color.basilGreen)
+            Text("Guilt-free gluten-free spaghetti pasta is sauted in garlic, and pesto. It\"s a easy and healthy dinner.").padding(16)
+        }
+        .background(Color.basilLightGreen)
     }
 }
 
