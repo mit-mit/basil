@@ -4,6 +4,7 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.platform.Font
 import androidx.compose.ui.unit.sp
 
 val basilBackground = Color(0xfffffbe6)
@@ -13,14 +14,14 @@ val basilOlive = Color(0xff37966f)
 val basilOrange = Color(0xfffd5523)
 
 val Montserrat = FontFamily(
-    Font(R.font.montserrat_regular),
-    Font(R.font.montserrat_bold, FontWeight.Bold),
-    Font(R.font.montserrat_semibold, FontWeight.SemiBold),
+    Font(resource = "montserrat_regular.ttf"),
+    Font(resource = "montserrat_bold.ttf", FontWeight.Bold),
+    Font(resource = "montserrat_semibold.ttf", FontWeight.SemiBold),
 )
 
 val Lekton = FontFamily(
-    Font(R.font.lekton_regular),
-    Font(R.font.lekton_bold, FontWeight.Bold),
+    Font(resource = "lekton_regular.ttf"),
+    Font(resource = "lekton_bold.ttf", FontWeight.Bold),
 )
 
 val MyTypography = Typography(
