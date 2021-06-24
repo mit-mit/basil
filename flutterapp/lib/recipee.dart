@@ -4,14 +4,34 @@ import 'recipe_details.dart';
 import 'recipe_name.dart';
 import 'recipe_sheet.dart';
 
-class RecipeWidget extends StatefulWidget {
-  const RecipeWidget({Key? key}) : super(key: key);
+class RecipeMainWidget extends StatelessWidget {
+  const RecipeMainWidget({Key? key}) : super(key: key);
 
   @override
-  _RecipeWidgetState createState() => _RecipeWidgetState();
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        SizedBox(height: 32),
+        Stack(
+          children: [
+            RecipeDetailsWidget(),
+            RecipeNameWidget(),
+          ],
+        ),
+      ],
+    );
+  }
 }
 
-class _RecipeWidgetState extends State<RecipeWidget> {
+// Mobile layout: Has the main widget and the ingredients in a bottom sheet.
+class RecipeNarrowWidget extends StatefulWidget {
+  const RecipeNarrowWidget({Key? key}) : super(key: key);
+
+  @override
+  _RecipeNarrowWidgetState createState() => _RecipeNarrowWidgetState();
+}
+
+class _RecipeNarrowWidgetState extends State<RecipeNarrowWidget> {
   var showBottomTabs = true;
 
   @override
@@ -19,17 +39,7 @@ class _RecipeWidgetState extends State<RecipeWidget> {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
-        body: Column(
-          children: [
-            SizedBox(height: 32),
-            Stack(
-              children: [
-                RecipeDetailsWidget(),
-                RecipeNameWidget(),
-              ],
-            ),
-          ],
-        ),
+        body: RecipeMainWidget(),
         bottomSheet: showBottomTabs
             ? RecipeSheet(
                 collapsed: true,
@@ -51,6 +61,38 @@ class _RecipeWidgetState extends State<RecipeWidget> {
               )
             : null,
       ),
+    );
+  }
+}
+
+// Mobile layout: Has the main widget on the left and and the ingredients on the right.
+class RecipeWideWidget extends StatelessWidget {
+  const RecipeWideWidget({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Flex(
+        direction: Axis.horizontal,
+        children: [
+          Flexible(flex: 1, child: RecipeMainWidget()),
+          Flexible(flex: 1, child: RecipeSheet(collapsed: false))
+        ],
+      ),
+    );
+  }
+}
+
+// Pick layout based on screen width.
+class RecipeWidget extends StatelessWidget {
+  const RecipeWidget({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final screenSize = MediaQuery.of(context).size;
+
+    return Scaffold(
+      body: screenSize.width < 600 ? RecipeNarrowWidget() : RecipeWideWidget(),
     );
   }
 }
