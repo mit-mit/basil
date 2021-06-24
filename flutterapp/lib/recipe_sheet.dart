@@ -36,10 +36,8 @@ class RecipeSheet extends StatelessWidget {
             )
           : Container(
               color: basilBackground.withOpacity(0.5),
-              // Tried SafeArea here, but that doesn't seem to work!?
-              child: Padding(
-                padding:
-                    EdgeInsets.fromLTRB(0, AppBar().preferredSize.height, 0, 0),
+              // Using SafeArea here to avoid painting under the notch, but that doesn't seem to work!?
+              child: SafeArea(
                 child: Column(
                   children: [
                     TabBar(
