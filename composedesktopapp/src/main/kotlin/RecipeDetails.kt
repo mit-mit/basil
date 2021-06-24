@@ -1,3 +1,4 @@
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Divider
@@ -7,6 +8,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.imageFromResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -131,21 +133,19 @@ fun RecipeAllergens() {
         verticalAlignment = Alignment.CenterVertically,
         modifier = Modifier.fillMaxWidth()
     ) {
-//        Icon(
-//            painter = painterResource(id = R.drawable.no_gluten),
-//            contentDescription = "No gluten icon"
-//        )
+        Image(bitmap = imageFromResource("no_gluten.png"),
+            "image",
+        )
         Spacer(Modifier.width(4.dp))
         Text(
             text = "Gluten-free",
             style = MaterialTheme.typography.subtitle2.copy(fontWeight = FontWeight.Bold)
         )
+        Spacer(Modifier.width(8.dp))
+        Image(bitmap = imageFromResource("no_egg.png"),
+            "image",
+        )
         Spacer(Modifier.width(4.dp))
-//        Icon(
-//            painter = painterResource(id = R.drawable.no_egg),
-//            contentDescription = "No egg icon"
-//        )
-        Spacer(Modifier.width(16.dp))
         Text(
             text = "Egg Free",
             style = MaterialTheme.typography.subtitle2.copy(fontWeight = FontWeight.Bold)
