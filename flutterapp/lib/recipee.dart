@@ -23,7 +23,7 @@ class RecipeMainWidget extends StatelessWidget {
   }
 }
 
-// Desktop layout: Has the main widget and the ingredients in a bottom sheet.
+// Mobile layout: Has the main widget and the ingredients in a bottom sheet.
 class RecipeNarrowWidget extends StatefulWidget {
   const RecipeNarrowWidget({Key? key}) : super(key: key);
 
@@ -65,7 +65,7 @@ class _RecipeNarrowWidgetState extends State<RecipeNarrowWidget> {
   }
 }
 
-// Mobile layout: Has the main widget on the left and and the ingredients on the right.
+// Desktop layout: Has the main widget on the left and and the ingredients on the right.
 class RecipeWideWidget extends StatelessWidget {
   const RecipeWideWidget({Key? key}) : super(key: key);
 
