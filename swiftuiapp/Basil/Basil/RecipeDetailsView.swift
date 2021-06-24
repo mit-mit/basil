@@ -90,9 +90,13 @@ struct RecipeAllergensView: View {
     var body: some View {
         HStack {
             Image("no-gluten")
+            Spacer()
+                .frame(width: 4)
             Text("Gluten-free")
                 .basilStyle(.subtitle1)
             Image("no-egg")
+            Spacer()
+                .frame(width: 4)
             Text("Egg-free")
                 .basilStyle(.subtitle1)
         }

@@ -10,6 +10,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -67,7 +68,7 @@ fun RecipeNutrients() {
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally,
             modifier = Modifier
-                .padding(end = 32.dp)
+                .padding(end = 16.dp)
                 .fillMaxHeight()
         ) {
             Text(
@@ -89,7 +90,7 @@ fun RecipeNutrients() {
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally,
             modifier = Modifier
-                .padding(start = 32.dp, end = 32.dp)
+                .padding(start = 16.dp, end = 16.dp)
                 .fillMaxHeight()
         ) {
             Text(
@@ -111,7 +112,7 @@ fun RecipeNutrients() {
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally,
             modifier = Modifier
-                .padding(start = 32.dp)
+                .padding(start = 16.dp)
                 .fillMaxHeight()
         ) {
             Text(
@@ -137,19 +138,20 @@ fun RecipeAllergens() {
             painter = painterResource(id = R.drawable.no_gluten),
             contentDescription = "No gluten icon"
         )
-        Spacer(Modifier.width(16.dp))
+        Spacer(Modifier.width(4.dp))
         Text(
             text = "Gluten-free",
-            style = MaterialTheme.typography.subtitle1
+            style = MaterialTheme.typography.subtitle2.copy(fontWeight = FontWeight.Bold)
         )
-        Spacer(Modifier.width(32.dp))
+        Spacer(Modifier.width(4.dp))
         Icon(
             painter = painterResource(id = R.drawable.no_egg),
             contentDescription = "No egg icon"
         )
         Spacer(Modifier.width(16.dp))
         Text(
-            text = "Egg Free", style = MaterialTheme.typography.subtitle1
+            text = "Egg Free",
+            style = MaterialTheme.typography.subtitle2.copy(fontWeight = FontWeight.Bold)
         )
     }
 }

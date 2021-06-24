@@ -84,7 +84,7 @@ class RecipeNutrientsWidget extends StatelessWidget {
               Text('465g', style: textTheme.subtitle1),
             ],
           ),
-          VerticalDivider(width: 64, thickness: .25, color: basilGreen),
+          VerticalDivider(width: 32, thickness: .25, color: basilGreen),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -92,7 +92,7 @@ class RecipeNutrientsWidget extends StatelessWidget {
               Text('27g', style: textTheme.subtitle1),
             ],
           ),
-          VerticalDivider(width: 64, thickness: .25, color: basilGreen),
+          VerticalDivider(width: 32, thickness: .25, color: basilGreen),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -117,12 +117,14 @@ class RecipeAllergensWidget extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Image(image: AssetImage('assets/icons/no-gluten.png')),
+        SizedBox(width: 4),
+        Text('Gluten-free',
+            style: textTheme.subtitle2!.copyWith(fontWeight: FontWeight.bold)),
         SizedBox(width: 16),
-        Text('Gluten-free', style: textTheme.subtitle1),
-        SizedBox(width: 32),
         Image(image: AssetImage('assets/icons/no-egg.png')),
-        SizedBox(width: 16),
-        Text('Egg Free', style: textTheme.subtitle1)
+        SizedBox(width: 4),
+        Text('Egg Free',
+            style: textTheme.subtitle2!.copyWith(fontWeight: FontWeight.bold))
       ],
     );
   }
